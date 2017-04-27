@@ -1,24 +1,27 @@
 #coding: utf-8
 import random
 
-message = raw_input("Hi! Do you want to play the game? ")
+attempt = 1
 
-if message == "yes":
+welcome_message = raw_input("Hi! Do you want to play the game? ")
+
+if welcome_message == "yes":
     print("Let's start! Enter number from 1 to 10: ")
-    a = input("")
-    b = random.randint(1, 10)
-    print(b)
-    i = 1
-while i < 10:
-     if a == b:
-         print("You win!")
-         exit()
-     else:
-         print("Oops! Try again.")
-         a = input("")
-         b = random.randint(1, 10)
-         print(b)
-         i += 1
+    number = input("")
+    reference_number = random.randint(1, 10)
+    print(reference_number)
+
+    while attempt < 10:
+
+        if number == reference_number:
+            print("You win!")
+            exit()
+        else:
+            print("Oops! Try again.")
+            number = input("")
+            reference_number = random.randint(1, 10)
+            print(reference_number)
+            attempt += 1
 else:
     print("Goodbye!")
     exit()
