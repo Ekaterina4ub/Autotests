@@ -3,23 +3,21 @@
 
 import random
 
-attempt = 1
+welcome_message = input("Do you want to play the game? ")
 
-welcome_message = input("Hi! Do you want to play the game? ")
-
-if welcome_message == "yes":
+while welcome_message == "yes":
     print("Let's start! Enter number from 1 to 10: ")
-
+    attempt = 0
     while attempt < 10:
         number = int(input())
         reference_number = random.randint(1, 10)
         print(reference_number)
         if number == reference_number:
             print("You win!")
-            exit()
+            break
         else:
             print("Oops! Try again.")
             attempt += 1
-else:
-    print("Goodbye!")
-    exit()
+    welcome_message = input("Do you want to play the game? ")
+print("Goodbye!")
+exit()
